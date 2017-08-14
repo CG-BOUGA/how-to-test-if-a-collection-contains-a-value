@@ -13,8 +13,6 @@ class User {
 
 public class Main {
 
-public static void main(String[] args) throws Exception {
-
 public static List<User> getUsers() {
     return Arrays.asList(
         new User("Ali"),
@@ -24,12 +22,15 @@ public static List<User> getUsers() {
     );
 }
 
+public static void main(String[] args) throws Exception {
+
 // }
 
 // Method 1: basic structures
-List<String> strings = Arrays.asList("1", "2", "3", "4", "5");
-boolean isIncluded = strings.contains("6");
-System.out.println("6 is the list: " + isIncluded);
+List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
+int integerToFind = 6;
+boolean integerExists = integers.contains(integerToFind);
+System.out.println("6 is the list: " + integerExists);
 
 // Method 2: complex structures
 List<User> users = getUsers();
