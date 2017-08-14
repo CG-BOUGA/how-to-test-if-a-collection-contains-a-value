@@ -4,10 +4,16 @@ import java.util.Arrays;
 import java.util.List;
 
 class User {
+    public int id;
     public String name;
 
-    User(String name) {
+    User(int id, String name) {
+        this.id = id;
         this.name = name;
+    }
+    
+    public String toString() {
+        return "{ id: " + id + ", name: " + name + " }";
     }
 }
 
@@ -15,10 +21,10 @@ public class Main {
 
 public static List<User> getUsers() {
     return Arrays.asList(
-        new User("Ali"),
-        new User("Bobby"),
-        new User("Charlie"),
-        new User("Dora")
+        new User(1, "Ali"),
+        new User(2, "Bobby"),
+        new User(3, "Charlie"),
+        new User(4, "Dora")
     );
 }
 
@@ -37,6 +43,13 @@ List<User> users = getUsers();
 String userToFind = "Bobby";
 boolean userExists = users.stream().anyMatch(user -> userToFind.equals(user.name));
 System.out.println("Bobby is in the list: " + userExists);
+
+// Method 3: find the element that matches the condition
+User bobby = users.stream()
+    .filter(user -> userToFind.equals(user.name))
+    .findFirst()
+    .orElse(null);
+System.out.println("Bobby: " + bobby);
 
 // { autofold
 
