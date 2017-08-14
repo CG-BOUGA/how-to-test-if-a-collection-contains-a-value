@@ -1,26 +1,46 @@
-# Welcome!
-
-This Java template lets you get started quickly with a simple one-page playground.
-
-You can create a runnable code snippet using the `runnable` keyword:
-
 ```java runnable
 // { autofold
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
-public static void main(String[] args) {
+public static void main(String[] args) throws Exception {
+
 // }
 
-String message = "Hello World!";
-System.out.println(message);
+// Method 1: basic structures
+List<String> strings = Arrays.asList("1", "2", "3", "4", "5");
+boolean isIncluded = strings.contains("6");
+System.out.println("6 is the list: " + isIncluded);
+
+// Method 2: complex structures
+List<User> users = getUsers();
+String userToFind = "Bobby";
+boolean userExists = users.stream().anyMatch(user -> userToFind.equals(user.name));
+System.out.println("Bobby is in the list: " + userExists);
 
 //{ autofold
+
 }
 
+public static List<User> getUsers() {
+    return Arrays.asList(
+        new User("Ali"),
+        new User("Bobby"),
+        new User("Charlie"),
+        new User("Dora")
+    );
+}
+
+}
+
+class User {
+    public String name;
+
+    User(String name) {
+        this.name = name;
+    }
 }
 //}
 ```
-
-# Advanced usage
-
-For more complex playgrounds, you can use this [Java template](https://github.com/TechDotIO/java-template)
