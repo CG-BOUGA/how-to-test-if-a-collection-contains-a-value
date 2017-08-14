@@ -33,14 +33,14 @@ public static List<User> getUsers() {
     );
 }
 
-}
-
-class User {
+public static class User {
     public String name;
 
     User(String name) {
         this.name = name;
     }
+}
+
 }
 
 //}
