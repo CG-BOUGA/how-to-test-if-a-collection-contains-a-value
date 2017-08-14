@@ -20,7 +20,7 @@ String userToFind = "Bobby";
 boolean userExists = users.stream().anyMatch(user -> userToFind.equals(user.name));
 System.out.println("Bobby is in the list: " + userExists);
 
-//{ autofold
+// { autofold
 
 }
 
@@ -42,5 +42,6 @@ class User {
         this.name = name;
     }
 }
+
 //}
 ```
