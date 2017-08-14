@@ -3,9 +3,26 @@
 import java.util.Arrays;
 import java.util.List;
 
+class User {
+    public String name;
+
+    User(String name) {
+        this.name = name;
+    }
+}
+
 public class Main {
 
 public static void main(String[] args) throws Exception {
+
+public static List<User> getUsers() {
+    return Arrays.asList(
+        new User("Ali"),
+        new User("Bobby"),
+        new User("Charlie"),
+        new User("Dora")
+    );
+}
 
 // }
 
@@ -20,28 +37,11 @@ String userToFind = "Bobby";
 boolean userExists = users.stream().anyMatch(user -> userToFind.equals(user.name));
 System.out.println("Bobby is in the list: " + userExists);
 
-//{ autofold
+// { autofold
 
-}
-
-public static List<User> getUsers() {
-    return Arrays.asList(
-        new User("Ali"),
-        new User("Bobby"),
-        new User("Charlie"),
-        new User("Dora")
-    );
-}
-
-public static class User {
-    public String name;
-
-    User(String name) {
-        this.name = name;
-    }
 }
 
 }
 
-//}
+// }
 ```
